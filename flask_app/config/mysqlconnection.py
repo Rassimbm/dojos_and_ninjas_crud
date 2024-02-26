@@ -9,7 +9,6 @@ class MySQLConnection:
                             charset = "utf8mb4",
                             cursorclass = pymysql.cursors.DictCursor,
                             autocommit = True
-
                             )
 
     def query_db(self, query:str, data:dict=None):

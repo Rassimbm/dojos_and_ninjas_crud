@@ -8,8 +8,14 @@ def index():
 
 @app.route("/add-dojo", methods = ["POST"])
 def p_add_dojo():
-    Dojo.save(request.form)
-    return redirect("/dojos")
+    if request.method == "POST":
+        data = {
+            "name": request.form["name"]
+        }
+        Dojo.save(data)
+        return redirect("/dojos")
+    else:
+        return redirect("/dojos")
 
 @app.route("/show-dojo/<int:dojo_id>")
 def show_dojo(dojo_id):
