@@ -19,3 +19,12 @@ class Dojo:
         for dict_row in results:
             dojos.append(cls(dict_row))
         return dojos
+    
+    @classmethod
+    def save(cls,data):
+        query = """
+                    INSERT INTO dojos (name)
+                    VALUES %(name)s;
+                """
+        result_id = connectToMySQL(cls.DB).query_db(query,data)
+        return result_id
