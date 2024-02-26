@@ -28,3 +28,30 @@ class Dojo:
                 """
         result_id = connectToMySQL(cls.DB).query_db(query,data)
         return result_id
+    
+    @classmethod
+    def get_one(cls, data):
+        query = """
+                    SELECT *
+                    FROM dojos
+                    WHERE id = %(id)s;
+                """
+        results =  connectToMySQL(cls.DB).query_db(query,data)
+        return cls(results[0])
+    
+    # @classmethod
+    # def update(cls,data):
+    #     query = """
+    #                 UPDATE dojos
+    #                 SET name = %(name)s
+    #                 WHERE id = %(id)s;
+    #             """
+    #     return connectToMySQL(cls.DB).query_db(query,data)
+    
+    # @classmethod
+    # def delete(cls,data):
+    #     query = """
+    #                 DELETE dojos
+    #                 WHERE id = %(id)s;
+    #             """
+    #     return connectToMySQL(cls.DB).query_db(query,data)
