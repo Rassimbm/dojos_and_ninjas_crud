@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="d-flex justify-content-between col-6 my-3 mx-auto">
-        <div class="bg-secondary p-2 rounded">
+        <div class="col-4 bg-secondary p-2 rounded">
             <h3>New Dojo</h3>
             <form action="add-dojo" method="post" class="form mt-4">
                 <div class="form-group my-4">
@@ -22,16 +22,15 @@
             </form>
         </div>
 
-        <div class="bg-secondary p-2 rounded">
+        <div class="col-4 bg-secondary p-2 rounded text-center">
             <h3>All Dojos</h3>
-            <ul class="list-group list-group-flush list-unstyled border border-3 border-dark rounded my-4">
-                <li class="list-group-item bg-secondary">
-                    {%for dojo in dojos%}
-                        <a href="/show-dojo/{{dojo.id}}" class="text-warning">{{dojo.name}}</a>
-                    {%endfor%}
-                </li>
-            </ul>
-            <a href="/ninjas/{{dojo.id}}">Add Ninja</a>
+            <div class="my-4">
+                {%for dojo in dojos%}
+                    <p>
+                        <a href="/show-dojo/{{dojo.id}}" class="text-warning text-decoration-none">{{dojo.name}}</a>
+                    </p>
+                {%endfor%}
+            </div>
         </div>
 
     </div>
