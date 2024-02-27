@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container col-6 text-center">
-        <h3>{{dojo.id}} Ninjas</h3>
+        <h3>{{dojo.name}} Ninjas</h3>
         <table class="table table-md table-dark table-striped-columns table-hover text-center rounded">
             <thead>
                 <tr>
@@ -19,7 +19,7 @@
                 </tr>
             </thead>
             <tbody>
-                {%for ninja in ninjas%}
+                {%for ninja in dojo.ninjas%}
                 <tr>
                     <td>{{ninja.first_name}}</td>
                     <td>{{ninja.last_name}}</td>

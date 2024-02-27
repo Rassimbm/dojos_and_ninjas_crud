@@ -58,8 +58,8 @@ class Dojo:
                 "first_name": dict_row["first_name"],
                 "last_name": dict_row["last_name"],
                 "age": dict_row["age"],
-                "created_at": dict_row["created_at"],
-                "updated_at": dict_row["updated_at"]
+                "created_at": dict_row["ninjas.created_at"],
+                "updated_at": dict_row["ninjas.updated_at"]
             }
             dojo.ninjas.append(Ninja(ninja_data))
         return dojo
