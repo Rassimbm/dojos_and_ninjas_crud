@@ -8,10 +8,10 @@
 </head>
 <body>
     <h3 class="text-center">New Ninja</h3>
-    <div class="container col-2 bg-secondary text-light p-2 rounded mx-auto">
-        <form action="new-ninja" method="post" class="form mt-4">
-            <div class="form-group my-2">
-                <label for="dojo_id" class="form-label">Dojo:</label>
+    <div class="container col-2 bg-secondary text-light px-2 rounded mx-auto">
+        <form action="/new-ninja" method="post" class="form">
+            <div class="form-group">
+                <label for="dojo_id" class="form-label mt-2">Dojo:</label>
                 <select name="dojo_id" class="form-select">
                     <option value="disabled selected">Select Dojo</option>
                     {%for dojo in dojos%}
@@ -20,24 +20,24 @@
                 </select>
             </div>
             
-            <div class="form-group my-2">
+            <div class="form-group mt-2">
                 <label for="first_name" class="form-label">First Name:</label>
-                <input type="text" name="first_name" placeholder="Your First Name..." class="form-control form-control" required>
+                <input type="text" name="first_name" placeholder="Your First Name..." class="form-control" required>
             </div>
-            <div class="form-group my-2">
+            <div class="form-group mt-2">
                 <label for="last_name" class="form-label">Last Name:</label>
-                <input type="text" name="last_name" placeholder="Your Last Name..." class="form-control form-control" required>
+                <input type="text" name="last_name" placeholder="Your Last Name..." class="form-control" required>
             </div>
             <div class="form-group my-2">
                 <label for="age" class="form-label">Age:</label>
-                <input type="number" name="age" placeholder="Your Age..." class="form-control form-control" required>
+                <input type="number" name="age" placeholder="Your Age..." class="form-control" required>
             </div>
             <div class="form-group text-center" requiered>
-                <input type="submit" value="Add Ninja" class="btn btn-primary rounded">
+                <input type="submit" value="Add Ninja" class="btn btn-primary my-2 rounded">
             </div>
         </form>
     </div>
-    <div class="col-2 text-center mt-4 mx-auto">
+    <div class="col-2 text-center mt-2 mx-auto">
         <a href="/dojos" class="text-decoration-none">Home</a>
     </div>
 </body>
